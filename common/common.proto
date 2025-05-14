@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package commmon;
+
+option go_package = "./common;commmon";
+
+message Page{
+  int32 page_size = 1; // 页大小
+  int32 page_number = 2; // 页号
+  int64 total_count = 3; // 总数
+}
+
+message Error {
+  int32 code = 1; // 错误码
+  string message = 2; // 错误信息
+}
+
+
+
+message CreateTaskRequest {
+  string client_id = 1;
+  string prompt_template_id = 4;
+  map<string, string> prompt_template_params = 5;
+}
